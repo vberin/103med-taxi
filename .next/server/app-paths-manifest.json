@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/(application)/calculator/page": "app/(application)/calculator/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/locations/[district_slug]/page": "app/locations/[district_slug]/page.js",
+  "/terms/page": "app/terms/page.js",
+  "/routes/[city_slug]/page": "app/routes/[city_slug]/page.js"
+}

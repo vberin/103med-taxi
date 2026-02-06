@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: hsl(0, 100%, 60%);
+    --color-secondary: hsl(187, 75%, 45%);
+    --color-text: #0f172a; /* slate-900 */
+    --color-bg: hsl(210, 40%, 98%);
+    --color-white: #ffffff;
+    --color-muted: #f4fbfc;
+    --color-border: #e1e1e1;
+    --color-accent: #eefcfd;
+    --color-dark: #2C3E50;
+    --radius: 1.5rem; /* 24px for rounded-3xl */
+    --shadow-soft: 0 4px 20px -2px rgba(0,0,0,0.05);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    padding-bottom: 80px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  h1, h2, h3 {
+    margin: 0 0 1rem 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+  }
+
+  p {
+    margin: 0 0 1rem 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+  }
+
+  .btn-secondary {
+    background-color: var(--color-secondary);
+    color: white;
+  }
+
+  .btn-outline {
+    border: 2px solid var(--color-secondary);
+    color: var(--color-text);
+    background: transparent;
+  }
+}

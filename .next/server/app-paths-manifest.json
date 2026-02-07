@@ -1,16 +1,13 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/ru/page": "app/ru/page.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/(application)/calculator/page": "app/(application)/calculator/page.js",
-  "/blog/[slug]/page": "app/blog/[slug]/page.js",
   "/blog/page": "app/blog/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
   "/privacy/page": "app/privacy/page.js",
-  "/[lang]/queries/[slug]/page": "app/[lang]/queries/[slug]/page.js",
+  "/terms/page": "app/terms/page.js",
   "/locations/[district_slug]/page": "app/locations/[district_slug]/page.js",
   "/routes/[city_slug]/page": "app/routes/[city_slug]/page.js",
-  "/queries/[slug]/page": "app/queries/[slug]/page.js",
-  "/terms/page": "app/terms/page.js",
-  "/ru/queries/[slug]/page": "app/ru/queries/[slug]/page.js"
+  "/queries/[slug]/page": "app/queries/[slug]/page.js"
 }

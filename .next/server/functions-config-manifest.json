@@ -1,1 +1,1 @@
-{"version":1,"functions":{"/calculator":{},"/blog/[slug]":{},"/blog":{},"/privacy":{},"/[lang]/queries/[slug]":{},"/locations/[district_slug]":{},"/terms":{},"/routes/[city_slug]":{},"/queries/[slug]":{},"/ru/queries/[slug]":{}}}
+{"version":1,"functions":{"/calculator":{},"/privacy":{},"/blog/[slug]":{},"/blog":{},"/terms":{},"/routes/[city_slug]":{},"/locations/[district_slug]":{},"/queries/[slug]":{}}}

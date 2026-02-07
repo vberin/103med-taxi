@@ -1,57 +1,87 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { BLOG_POSTS } from '@/lib/data/blog-posts';
-import { Calendar, ArrowRight } from 'lucide-react';
+import { Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Блог | Корисні статті про перевезення хворих',
-  description: 'Поради щодо догляду за лежачими хворими, підготовка до транспортування та новини сервісу.',
+  title: 'Блог 103med.taxi | Поради, новини, статті про медичне таксі',
+  description:
+    'Корисні статті про перевезення лежачих хворих, поради родичам, огляди маршрутів та послуг медичного таксі в Кривому Розі',
+  keywords: [
+    'блог медтаксі',
+    'статті про перевезення',
+    'поради медичний транспорт',
+    'новини 103med',
+  ].join(', '),
 };
 
 export default function BlogPage() {
+  const categories = ['Всі', 'Поради', 'Послуги', 'Маршрути', 'Здоров\'я', 'Новини'];
+
   return (
-    <main className="min-h-screen bg-slate-50 pt-32 pb-20">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50 to-blue-50 pt-32 pb-16 px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Hero */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Наш Блог</h1>
-          <p className="text-slate-500 text-xl max-w-2xl mx-auto">
-            Корисна інформація для пацієнтів та їхніх родичів
+          <h1 className="text-5xl md:text-6xl font-black text-slate-800 mb-6">
+            Блог <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">103med.taxi</span>
+          </h1>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            Корисні поради, новини та статті про медичне перевезення
           </p>
         </div>
 
+        {/* Categories */}
+        <div className="flex flex-wrap gap-3 justify-center mb-12">
+          {categories.map((cat) => (
+            <Link
+              key={cat}
+              href={`/blog?category=${cat}`}
+              className="px-6 py-3 bg-white rounded-xl border-2 border-cyan-200 text-slate-700 font-bold hover:bg-cyan-50 hover:border-cyan-400 transition"
+            >
+              {cat}
+            </Link>
+          ))}
+        </div>
+
+        {/* Blog Posts Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {BLOG_POSTS.map((post) => (
-            <Link 
-              key={post.id} 
+            <Link
+              key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col"
+              className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
-              {/* Заглушка картинки (цветной градиент) */}
-              <div className="h-48 bg-gradient-to-r from-slate-200 to-slate-300 group-hover:from-red-100 group-hover:to-red-200 transition-colors relative flex items-center justify-center">
-                 <span className="bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-slate-600 uppercase tracking-wider shadow-sm">
-                   {post.category}
-                 </span>
-              </div>
-              
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="flex items-center gap-2 text-slate-400 text-xs font-bold mb-4">
-                  <Calendar className="w-4 h-4" />
-                  {post.date}
+              <div className="p-6">
+                {/* Category Badge */}
+                <div className="inline-block px-4 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-bold mb-4">
+                  {post.category}
                 </div>
-                <h2 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-red-500 transition-colors line-clamp-2">
+
+                {/* Title */}
+                <h2 className="text-2xl font-black text-slate-800 mb-3 group-hover:text-cyan-600 transition">
                   {post.title}
                 </h2>
-                <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
-                  {post.excerpt}
-                </p>
-                <div className="flex items-center text-red-500 font-bold text-sm group-hover:translate-x-2 transition-transform">
-                  Читати статтю <ArrowRight className="w-4 h-4 ml-2" />
+
+                {/* Excerpt */}
+                <p className="text-slate-600 mb-4 line-clamp-3">{post.excerpt}</p>
+
+                {/* Meta */}
+                <div className="flex items-center gap-4 text-sm text-slate-500">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    <span>{new Date(post.date).toLocaleDateString('uk-UA')}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Clock className="w-4 h-4" />
+                    <span>{post.readTime} хв</span>
+                  </div>
                 </div>
               </div>
             </Link>
           ))}
         </div>
       </div>
-    </main>
+    </div>
   );
 }

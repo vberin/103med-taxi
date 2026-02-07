@@ -1,114 +1,186 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CITIES } from '@/lib/data/cities';
+import { Phone, MapPin, CheckCircle2 } from 'lucide-react';
 import Calculator from '@/components/features/Calculator';
 
-interface Props {
-  params: {
-    city_slug: string;
-  };
-}
-
-// 1. Генерируем статические пути для сборки
 export async function generateStaticParams() {
   return CITIES.map((city) => ({
     city_slug: city.slug,
   }));
 }
 
-// 2. Генерируем SEO (Title/Description)
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { city_slug: string };
+}): Promise<Metadata> {
   const city = CITIES.find((c) => c.slug === params.city_slug);
-  
-  if (!city) {
-    return { title: 'Маршрут не знайдено' };
-  }
+  if (!city) return {};
+
+  const title = `Медичне таксі Кривий Ріг - ${city.nameUk} | Перевезення лежачих хворих`;
+  const description = city.descriptionUk;
 
   return {
-    title: `Перевезення хворих Кривий Ріг - ${city.name} | Ціна ${city.price} грн`,
-    description: `Медичне таксі з Кривого Рогу в ${city.name}. ${city.description} Відстань ${city.distance} км.`
+    title,
+    description,
+    keywords: city.seoKeywordsUk.join(', '),
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      locale: 'uk_UA',
+    },
+    alternates: {
+      canonical: `https://103med.taxi/routes/${city.slug}`,
+    },
   };
 }
 
-// 3. Основной компонент страницы
-export default function CityRoutePage({ params }: Props) {
+export default function CityRoutePage({
+  params,
+}: {
+  params: { city_slug: string };
+}) {
   const city = CITIES.find((c) => c.slug === params.city_slug);
+  if (!city) notFound();
 
-  if (!city) {
-    notFound();
-  }
+  const cityName = city.nameUk;
+  const description = city.descriptionUk;
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-20">
-      {/* Hero Section */}
-      <section className="bg-slate-900 text-white pt-32 pb-16 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <p className="text-cyan-400 font-bold tracking-widest uppercase mb-4 animate-in fade-in slide-in-from-bottom-4">
-            Міжміське перевезення
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50 to-blue-50">
+      {/* Hero */}
+      <section className="pt-32 pb-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-black text-slate-800 mb-6">
+              Кривий Ріг — <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">{cityName}</span>
+            </h1>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              {description}
+            </p>
+            <div className="flex flex-wrap gap-6 justify-center mt-8 text-lg">
+              <div className="flex items-center gap-2">
+                <MapPin className="text-cyan-500" />
+                <span className="font-bold text-slate-700">{city.distance} км</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-2xl font-black text-green-600">Від {city.priceFrom} грн</span>
+              </div>
+            </div>
+          </div>
+
+          <Calculator defaultDestination={cityName} />
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-16 px-4 bg-white/60">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-black text-slate-800 mb-10 text-center">
+            Чому обирають нас для поїздки до {cityName}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {city.features.map((feature, idx) => (
+              <div key={idx} className="bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-cyan-100 hover:shadow-lg transition">
+                <CheckCircle2 className="w-10 h-10 text-green-500 mb-4" />
+                <p className="text-slate-700 font-medium">{feature}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hospitals */}
+      {city.hospitals.length > 0 && (
+        <section className="py-16 px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-black text-slate-800 mb-10 text-center">
+              Лікарні та клініки у місті {cityName}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {city.hospitals.map((hospital, idx) => (
+                <div key={idx} className="bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-slate-200">
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">{hospital.name}</h3>
+                  <p className="text-slate-600 flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-cyan-500" />
+                    {hospital.address}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQ */}
+      <section className="py-16 px-4 bg-white/60">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black text-slate-800 mb-10 text-center">
+            Питання про перевезення до {cityName}
+          </h2>
+          <div className="space-y-6">
+            <details className="bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-slate-200">
+              <summary className="font-bold text-lg text-slate-800 cursor-pointer">
+                Скільки часу займає поїздка Кривий Ріг — {cityName}?
+              </summary>
+              <p className="text-slate-600 mt-4">
+                Приблизний час у дорозі — {Math.round(city.distance / 80)} години. 
+                Робимо зупинки для комфорту пацієнта за потреби.
+              </p>
+            </details>
+
+            <details className="bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-slate-200">
+              <summary className="font-bold text-lg text-slate-800 cursor-pointer">
+                Чи можна їхати з супроводжуючим?
+              </summary>
+              <p className="text-slate-600 mt-4">
+                Так, супровід родичів включено у вартість безкоштовно (до 2 осіб).
+              </p>
+            </details>
+
+            <details className="bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-slate-200">
+              <summary className="font-bold text-lg text-slate-800 cursor-pointer">
+                Які документи потрібні для перевезення?
+              </summary>
+              <p className="text-slate-600 mt-4">
+                Паспорт пацієнта, медична довідка або виписка з лікарні (за наявності). 
+                Диспетчер підкаже всі деталі при замовленні.
+              </p>
+            </details>
+
+            <details className="bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-slate-200">
+              <summary className="font-bold text-lg text-slate-800 cursor-pointer">
+                Як оплатити поїздку?
+              </summary>
+              <p className="text-slate-600 mt-4">
+                Оплата готівкою водію після поїздки або передоплата на картку (за домовленістю). 
+                Видаємо чек/квитанцію.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 px-4 bg-gradient-to-r from-cyan-500 to-blue-600">
+        <div className="max-w-4xl mx-auto text-center text-white">
+          <h2 className="text-3xl md:text-5xl font-black mb-6">
+            Потрібна консультація?
+          </h2>
+          <p className="text-xl mb-8 opacity-90">
+            Наші диспетчери дадуть відповідь на всі питання щодо перевезення до {cityName}
           </p>
-          <h1 className="text-3xl md:text-5xl font-black mb-6 leading-tight animate-in fade-in slide-in-from-bottom-6 duration-700">
-            Кривий Ріг — <span className="text-cyan-400">{city.name}</span>
-          </h1>
-          <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            Комфортне транспортування лежачих хворих &quot;від ліжка до ліжка&quot;. 
-            Без передоплати. Медичний супровід.
-          </p>
+          <a
+            href="tel:+380970000000"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-cyan-600 font-black text-xl rounded-2xl shadow-2xl hover:scale-105 transition"
+          >
+            <Phone className="w-6 h-6" />
+            Зателефонувати диспетчеру
+          </a>
         </div>
       </section>
-
-      {/* Calculator Section */}
-      <section className="px-4 -mt-10 relative z-10">
-        <div className="container mx-auto">
-          {/* Передаем имя города в калькулятор */}
-          <Calculator defaultDestination={city.name} />
-        </div>
-      </section>
-
-      {/* Info Grid */}
-      <section className="container mx-auto px-4 py-12 max-w-4xl">
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
-            <div className="text-4xl mb-2">🚗</div>
-            <div className="text-slate-500 text-sm font-bold uppercase mb-1">Відстань</div>
-            <div className="text-2xl font-black text-slate-800">~{city.distance} км</div>
-          </div>
-          
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
-            <div className="text-4xl mb-2">⏱️</div>
-            <div className="text-slate-500 text-sm font-bold uppercase mb-1">Час у дорозі</div>
-            <div className="text-2xl font-black text-slate-800">
-              ~{(city.distance / 70).toFixed(1)} год
-            </div>
-          </div>
-
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">
-              Фіксована ціна
-            </div>
-            <div className="text-4xl mb-2">💰</div>
-            <div className="text-slate-500 text-sm font-bold uppercase mb-1">Вартість</div>
-            <div className="text-2xl font-black text-green-600">
-              ~{city.price} грн
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* SEO Text */}
-      <section className="container mx-auto px-4 max-w-3xl text-slate-600 leading-relaxed">
-        <h2 className="text-2xl font-bold text-slate-800 mb-4">
-          Як замовити перевезення в місто {city.name}?
-        </h2>
-        <p className="mb-4">
-          Ми спеціалізуємося на дальніх перевезеннях. Наша бригада підготує пацієнта до дороги, 
-          забезпечить безпечний спуск та підйом на поверх у місті {city.name}. 
-          Ми використовуємо м&apos;які ноші та спеціалізоване обладнання.
-        </p>
-        <p>
-          Всі автомобілі обладнані системою клімат-контролю та м&apos;якою підвіскою, що критично важливо 
-          при поїздках на відстань понад {city.distance} км.
-        </p>
-      </section>
-    </main>
+    </div>
   );
 }

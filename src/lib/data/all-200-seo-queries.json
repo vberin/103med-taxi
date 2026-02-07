@@ -1,0 +1,904 @@
+{
+  "queries": [
+    {
+      "id": 1,
+      "slugUk": "perevezennya-lezhachykh-khvorykh-kryvyi-rih",
+      "slugRu": "perevozka-lezhachikh-bolnykh-krivoy-rog",
+      "titleUk": "Перевезення лежачих хворих Кривий Ріг — медтаксі 24/7",
+      "titleRu": "Перевозка лежачих больных Кривой Рог — медтакси 24/7",
+      "category": "general",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 2,
+      "slugUk": "transportuvannya-khvorykh-kryvyi-rih",
+      "slugRu": "transportirovka-bolnykh-krivoy-rog",
+      "titleUk": "Транспортування хворих Кривий Ріг",
+      "titleRu": "Транспортировка больных Кривой Рог",
+      "category": "general",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 3,
+      "slugUk": "medtaksi-kryvyi-rih",
+      "slugRu": "medtaksi-krivoy-rog",
+      "titleUk": "Медтаксі Кривий Ріг — виїзд за 15 хвилин",
+      "titleRu": "Медтакси Кривой Рог — выезд за 15 минут",
+      "category": "general",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 4,
+      "slugUk": "sluzhba-perevezennya-lezhachykh",
+      "slugRu": "sluzhba-perevozki-lezhachikh",
+      "titleUk": "Служба перевезення лежачих хворих",
+      "titleRu": "Служба перевозки лежачих больных",
+      "category": "general",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 5,
+      "slugUk": "taksi-dlya-lezhachykh-khvorykh",
+      "slugRu": "taksi-dlya-lezhachikh-bolnykh",
+      "titleUk": "Таксі для лежачих хворих Кривий Ріг",
+      "titleRu": "Такси для лежачих больных Кривой Рог",
+      "category": "general",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 6,
+      "slugUk": "pryvatna-shvydka-dopomoha",
+      "slugRu": "chastnaya-skoraya-pomoshch",
+      "titleUk": "Приватна швидка допомога перевезення",
+      "titleRu": "Частная скорая помощь перевозка",
+      "category": "general",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 7,
+      "slugUk": "perevezennya-invalidiv-kryvyi-rih",
+      "slugRu": "perevozka-invalidov-krivoy-rog",
+      "titleUk": "Перевезення інвалідів Кривий Ріг",
+      "titleRu": "Перевозка инвалидов Кривой Рог",
+      "category": "patient",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 8,
+      "slugUk": "perevezennya-vazhkokhvorykh",
+      "slugRu": "perevozka-tyazhelobolnykh",
+      "titleUk": "Перевезення важкохворих Кривий Ріг",
+      "titleRu": "Перевозка тяжелобольных Кривой Рог",
+      "category": "general",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 9,
+      "slugUk": "sanitarne-perevezennya-khvorykh",
+      "slugRu": "sanitarnaya-perevozka-bolnykh",
+      "titleUk": "Санітарне перевезення хворих",
+      "titleRu": "Санитарная перевозка больных",
+      "category": "general",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 10,
+      "slugUk": "mashyna-dlya-perevezennya-khvorykh",
+      "slugRu": "mashina-dlya-perevozki-bolnykh",
+      "titleUk": "Машина для перевезення лежачих хворих",
+      "titleRu": "Машина для перевозки лежачих больных",
+      "category": "general",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 11,
+      "slugUk": "zamovyty-perevezennya-khvoroho",
+      "slugRu": "zakazat-perevozku-bolnogo",
+      "titleUk": "Замовити перевезення хворого",
+      "titleRu": "Заказать перевозку больного",
+      "category": "service",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 12,
+      "slugUk": "medychne-taksi-kryvyi-rih",
+      "slugRu": "meditsinskoe-taksi-krivoy-rog",
+      "titleUk": "Медичне таксі Кривий Ріг цілодобово",
+      "titleRu": "Медицинское такси Кривой Рог круглосуточно",
+      "category": "general",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 13,
+      "slugUk": "perevezennya-malomobyilnykh",
+      "slugRu": "perevozka-malomobilnykh",
+      "titleUk": "Перевезення маломобільних груп",
+      "titleRu": "Перевозка маломобильных граждан",
+      "category": "patient",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 14,
+      "slugUk": "spetztransport-dlya-khvorykh",
+      "slugRu": "spetztransport-dlya-bolnykh",
+      "titleUk": "Спецтранспорт для хворих",
+      "titleRu": "Спецтранспорт для больных",
+      "category": "general",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 15,
+      "slugUk": "platne-perevezennya-khvorykh",
+      "slugRu": "platnaya-perevozka-bolnykh",
+      "titleUk": "Платне перевезення хворих",
+      "titleRu": "Платная перевозка больных",
+      "category": "general",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 16,
+      "slugUk": "perevezennya-invalidiv-vizochnykiv",
+      "slugRu": "perevozka-invalidov-kolyasochnikov",
+      "titleUk": "Перевезення інвалідів візочників",
+      "titleRu": "Перевозка инвалидов колясочников",
+      "category": "patient",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 17,
+      "slugUk": "perevezennya-litnikh-lyudey",
+      "slugRu": "perevozka-pozhilykh-lyudey",
+      "titleUk": "Перевезення літніх людей",
+      "titleRu": "Перевозка пожилых людей",
+      "category": "patient",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 18,
+      "slugUk": "transportuvannya-lezhachoyi-babusi",
+      "slugRu": "transportirovka-lezhachey-babushki",
+      "titleUk": "Транспортування лежачої бабусі",
+      "titleRu": "Транспортировка лежачей бабушки",
+      "category": "patient",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 19,
+      "slugUk": "perevezty-didusya-v-likarnu",
+      "slugRu": "perevezti-dedushku-v-bolnitsu",
+      "titleUk": "Перевезти дідуся в лікарню",
+      "titleRu": "Перевезти дедушку в больницу",
+      "category": "patient",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 20,
+      "slugUk": "perevezennya-paralizovanykh",
+      "slugRu": "perevozka-paralizovannykh",
+      "titleUk": "Перевезення паралізованих людей",
+      "titleRu": "Перевозка парализованных людей",
+      "category": "patient",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 21,
+      "slugUk": "taksi-dlya-invalidiv-1-hrupy",
+      "slugRu": "taksi-dlya-invalidov-1-gruppy",
+      "titleUk": "Таксі для інвалідів 1 групи",
+      "titleRu": "Такси для инвалидов 1 группы",
+      "category": "patient",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 22,
+      "slugUk": "perevezennya-hladkykh-khvorykh",
+      "slugRu": "perevozka-tuchnykh-bolnykh",
+      "titleUk": "Перевезення гладких хворих 100+ кг",
+      "titleRu": "Перевозка тучных больных 100+ кг",
+      "category": "patient",
+      "price": "від 1000 грн"
+    },
+    {
+      "id": 23,
+      "slugUk": "perevezennya-lezhachykh-rodychiv",
+      "slugRu": "perevozka-lezhachikh-rodstvennikov",
+      "titleUk": "Перевезення лежачих родичів",
+      "titleRu": "Перевозка лежачих родственников",
+      "category": "patient",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 24,
+      "slugUk": "transportuvannya-prestarilykh",
+      "slugRu": "transportirovka-prestarelykh",
+      "titleUk": "Транспортування престарілих людей",
+      "titleRu": "Транспортировка престарелых людей",
+      "category": "patient",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 25,
+      "slugUk": "perevezennya-z-obmezhennyamy",
+      "slugRu": "perevozka-s-ogranicheniyami",
+      "titleUk": "Перевезення пацієнтів з обмеженими можливостями",
+      "titleRu": "Перевозка пациентов с ограниченными возможностями",
+      "category": "patient",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 26,
+      "slugUk": "perevezennya-pislya-insultu",
+      "slugRu": "perevozka-posle-insulta",
+      "titleUk": "Перевезення хворих після інсульту",
+      "titleRu": "Перевозка больных после инсульта",
+      "category": "diagnosis",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 27,
+      "slugUk": "perevezty-z-perelomom-stehna",
+      "slugRu": "perevezti-s-perelomom-bedra",
+      "titleUk": "Перевезти з переломом шийки стегна",
+      "titleRu": "Перевезти с переломом шейки бедра",
+      "category": "diagnosis",
+      "price": "від 1000 грн"
+    },
+    {
+      "id": 28,
+      "slugUk": "perevezennya-z-perelomamy",
+      "slugRu": "perevozka-s-perelomami",
+      "titleUk": "Перевезення хворих з переломами",
+      "titleRu": "Перевозка больных с переломами",
+      "category": "diagnosis",
+      "price": "від 950 грн"
+    },
+    {
+      "id": 29,
+      "slugUk": "perevezennya-onkokhvorykh",
+      "slugRu": "perevozka-onkobolnykh",
+      "titleUk": "Перевезення онкохворих Кривий Ріг",
+      "titleRu": "Перевозка онкобольных Кривой Рог",
+      "category": "diagnosis",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 30,
+      "slugUk": "transportuvannya-pislya-operatsiyi",
+      "slugRu": "transportirovka-posle-operatsii",
+      "titleUk": "Транспортування після операції",
+      "titleRu": "Транспортировка после операции",
+      "category": "diagnosis",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 31,
+      "slugUk": "perevezennya-v-hipsi",
+      "slugRu": "perevozka-v-gipse",
+      "titleUk": "Перевезення лежачих в гіпсі",
+      "titleRu": "Перевозка лежачих в гипсе",
+      "category": "diagnosis",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 32,
+      "slugUk": "perevezennya-z-travmoyu-khrebta",
+      "slugRu": "perevozka-s-travmoy-pozvonochnika",
+      "titleUk": "Перевезення з травмою хребта",
+      "titleRu": "Перевозка с травмой позвоночника",
+      "category": "diagnosis",
+      "price": "від 1000 грн"
+    },
+    {
+      "id": 33,
+      "slugUk": "transportuvannya-spinalnykh-khvorykh",
+      "slugRu": "transportirovka-spinalnykh-bolnykh",
+      "titleUk": "Транспортування спінальних хворих",
+      "titleRu": "Транспортировка спинальных больных",
+      "category": "diagnosis",
+      "price": "від 1000 грн"
+    },
+    {
+      "id": 34,
+      "slugUk": "perevezennya-z-dementsiyeyu",
+      "slugRu": "perevozka-s-dementsiyey",
+      "titleUk": "Перевезення хворих з деменцією",
+      "titleRu": "Перевозка больных с деменцией",
+      "category": "diagnosis",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 35,
+      "slugUk": "perevezennya-psykhichno-khvorykh",
+      "slugRu": "perevozka-psikhicheski-bolnykh",
+      "titleUk": "Перевезення психічно хворих",
+      "titleRu": "Перевозка психически больных",
+      "category": "diagnosis",
+      "price": "від 950 грн"
+    },
+    {
+      "id": 36,
+      "slugUk": "perevezennya-na-hemodializ",
+      "slugRu": "perevozka-na-gemodializ",
+      "titleUk": "Перевезення хворих на гемодіаліз",
+      "titleRu": "Перевозка больных на гемодиализ",
+      "category": "diagnosis",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 37,
+      "slugUk": "transportuvannya-pislya-dtp",
+      "slugRu": "transportirovka-posle-dtp",
+      "titleUk": "Транспортування лежачих після ДТП",
+      "titleRu": "Транспортировка лежачих после ДТП",
+      "category": "diagnosis",
+      "price": "від 1000 грн"
+    },
+    {
+      "id": 38,
+      "slugUk": "perevezennya-z-aparatom-ilizarova",
+      "slugRu": "perevozka-s-apparatom-ilizarova",
+      "titleUk": "Перевезення з апаратом Ілізарова",
+      "titleRu": "Перевозка с аппаратом Илизарова",
+      "category": "diagnosis",
+      "price": "від 950 грн"
+    },
+    {
+      "id": 39,
+      "slugUk": "perevezennya-kysnezalezhnykh",
+      "slugRu": "perevozka-kislorodozavisimykh",
+      "titleUk": "Перевезення киснезалежних хворих",
+      "titleRu": "Перевозка кислородозависимых больных",
+      "category": "diagnosis",
+      "price": "від 1000 грн"
+    },
+    {
+      "id": 40,
+      "slugUk": "transportuvannya-z-infarktom",
+      "slugRu": "transportirovka-s-infarktom",
+      "titleUk": "Транспортування з інфарктом стабільних",
+      "titleRu": "Транспортировка с инфарктом стабильных",
+      "category": "diagnosis",
+      "price": "від 1000 грн"
+    },
+    {
+      "id": 41,
+      "slugUk": "perevezennya-vid-lizhka-do-lizhka",
+      "slugRu": "perevozka-ot-krovati-do-krovati",
+      "titleUk": "Перевезення від ліжка до ліжка",
+      "titleRu": "Перевозка от кровати до кровати",
+      "category": "service",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 42,
+      "slugUk": "pidiom-khvoroho-na-poverkh-bez-lifta",
+      "slugRu": "podem-bolnogo-na-etazh-bez-lifta",
+      "titleUk": "Підйом хворого на поверх без ліфта",
+      "titleRu": "Подъем больного на этаж без лифта",
+      "category": "service",
+      "price": "включено"
+    },
+    {
+      "id": 43,
+      "slugUk": "spusk-lezhachoho-z-poverkhu",
+      "slugRu": "spusk-lezhachego-s-etazha",
+      "titleUk": "Спуск лежачого хворого з поверху",
+      "titleRu": "Спуск лежачего больного с этажа",
+      "category": "service",
+      "price": "включено"
+    },
+    {
+      "id": 44,
+      "slugUk": "perevezennya-z-vantazhnykamy",
+      "slugRu": "perevozka-s-gruzchikami",
+      "titleUk": "Перевезення хворих з вантажниками",
+      "titleRu": "Перевозка больных с грузчиками",
+      "category": "service",
+      "price": "включено"
+    },
+    {
+      "id": 45,
+      "slugUk": "sanitariy-dlya-transportuvannya",
+      "slugRu": "sanitariy-dlya-transportirovki",
+      "titleUk": "Санітари для транспортування хворих",
+      "titleRu": "Санитары для транспортировки больных",
+      "category": "service",
+      "price": "включено"
+    },
+    {
+      "id": 46,
+      "slugUk": "mashyna-z-noshamy-zamovyty",
+      "slugRu": "mashina-s-nosilkami-zakazat",
+      "titleUk": "Машина з ношами замовити",
+      "titleRu": "Машина с носилками заказать",
+      "category": "service",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 47,
+      "slugUk": "perevezennya-na-myakykh-noshakh",
+      "slugRu": "perevozka-na-myagkikh-nosilkakh",
+      "titleUk": "Перевезення на м'яких ношах",
+      "titleRu": "Перевозка на мягких носилках",
+      "category": "service",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 48,
+      "slugUk": "orenda-shvydkoyi-dlya-perevezennya",
+      "slugRu": "arenda-skoroy-dlya-perevozki",
+      "titleUk": "Оренда швидкої для перевезення",
+      "titleRu": "Аренда скорой для перевозки",
+      "category": "service",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 49,
+      "slugUk": "perevezennya-khvorykh-tsilodobovo",
+      "slugRu": "perevozka-bolnykh-kruglosutochno",
+      "titleUk": "Перевезення хворих цілодобово",
+      "titleRu": "Перевозка больных круглосуточно",
+      "category": "service",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 50,
+      "slugUk": "terminove-perevezennya-khvorykh",
+      "slugRu": "srochnaya-perevozka-bolnykh",
+      "titleUk": "Термінове перевезення хворих",
+      "titleRu": "Срочная перевозка больных",
+      "category": "service",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 51,
+      "slugUk": "perevezennya-v-tysyachku-likarnya-2",
+      "slugRu": "perevozka-v-tysyachku-bolnitsa-2",
+      "titleUk": "Перевезення в Тисячку МКЛ №2",
+      "titleRu": "Перевозка в Тысячку МГБ №2",
+      "category": "hospital",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 52,
+      "slugUk": "zabraty-z-tysyachky-dodomu",
+      "slugRu": "zabrat-s-tysyachki-domoy",
+      "titleUk": "Забрати з Тисячки додому",
+      "titleRu": "Забрать с Тысячки домой",
+      "category": "hospital",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 53,
+      "slugUk": "perevezennya-v-onkodyspanser",
+      "slugRu": "perevozka-v-onkodispanser",
+      "titleUk": "Перевезення в онкодиспансер",
+      "titleRu": "Перевозка в онкодиспансер",
+      "category": "hospital",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 54,
+      "slugUk": "taksi-v-onkolohiyu-dlya-lezhachoho",
+      "slugRu": "taksi-v-onkologiyu-dlya-lezhachego",
+      "titleUk": "Таксі в онкологію для лежачого",
+      "titleRu": "Такси в онкологию для лежачего",
+      "category": "hospital",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 55,
+      "slugUk": "transportuvannya-v-1-miske-likarnya",
+      "slugRu": "transportirovka-v-1-gorbolnitsu",
+      "titleUk": "Транспортування в 1 міську лікарню",
+      "titleRu": "Транспортировка в 1 горбольницу",
+      "category": "hospital",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 56,
+      "slugUk": "perevezennya-2-miska-likarnya",
+      "slugRu": "perevozka-2-gorbolnitsa",
+      "titleUk": "Перевезення хворих 2 міська лікарня",
+      "titleRu": "Перевозка больных 2 горбольница",
+      "category": "hospital",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 57,
+      "slugUk": "perevezennya-v-4-likarnya-makulan",
+      "slugRu": "perevozka-v-4-bolnitsu-makulan",
+      "titleUk": "Перевезення в 4 лікарню Макулан",
+      "titleRu": "Перевозка в 4 больницу Макулан",
+      "category": "hospital",
+      "price": "від 950 грн"
+    },
+    {
+      "id": 58,
+      "slugUk": "perevezennya-v-16-likarnya-damanskyi",
+      "slugRu": "perevozka-v-16-bolnitsu-damanskiy",
+      "titleUk": "Перевезення в 16 лікарню Даманський",
+      "titleRu": "Перевозка в 16 больницу Даманский",
+      "category": "hospital",
+      "price": "від 1000 грн"
+    },
+    {
+      "id": 59,
+      "slugUk": "transportuvannya-v-pnd",
+      "slugRu": "transportirovka-v-pnd",
+      "titleUk": "Транспортування в ПНД",
+      "titleRu": "Транспортировка в ПНД",
+      "category": "hospital",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 60,
+      "slugUk": "perevezennya-v-infektsiinu-likarnya",
+      "slugRu": "perevozka-v-infektsionnuyu-bolnitsu",
+      "titleUk": "Перевезення в інфекційну лікарню",
+      "titleRu": "Перевозка в инфекционную больницу",
+      "category": "hospital",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 61,
+      "slugUk": "perevezennya-kryvyi-rih-dnipro",
+      "slugRu": "perevozka-krivoy-rog-dnepr",
+      "titleUk": "Перевезення хворих Кривий Ріг Дніпро",
+      "titleRu": "Перевозка больных Кривой Рог Днепр",
+      "category": "hospital",
+      "price": "від 1200 грн"
+    },
+    {
+      "id": 62,
+      "slugUk": "perevezennya-kryvyi-rih-kyiv",
+      "slugRu": "perevozka-krivoy-rog-kiev",
+      "titleUk": "Перевезення хворих Кривий Ріг Київ",
+      "titleRu": "Перевозка больных Кривой Рог Киев",
+      "category": "hospital",
+      "price": "від 4500 грн"
+    },
+    {
+      "id": 63,
+      "slugUk": "mizhmiske-perevezennya-khvorykh",
+      "slugRu": "mezhdugorodnaya-perevozka-bolnykh",
+      "titleUk": "Міжміське перевезення хворих",
+      "titleRu": "Междугородняя перевозка больных",
+      "category": "hospital",
+      "price": "від 1200 грн"
+    },
+    {
+      "id": 64,
+      "slugUk": "transportuvannya-za-kordon",
+      "slugRu": "transportirovka-za-granitsu",
+      "titleUk": "Транспортування за кордон лежачих",
+      "titleRu": "Транспортировка за границу лежачих",
+      "category": "hospital",
+      "price": "за домовленістю"
+    },
+    {
+      "id": 65,
+      "slugUk": "perevezennya-na-mrt-z-ochikuvannyam",
+      "slugRu": "perevozka-na-mrt-s-ozhidaniem",
+      "titleUk": "Перевезення на МРТ з очікуванням",
+      "titleRu": "Перевозка на МРТ с ожиданием",
+      "category": "hospital",
+      "price": "від 1000 грн"
+    },
+    {
+      "id": 66,
+      "slugUk": "perevezennya-na-kt-kryvyi-rih",
+      "slugRu": "perevozka-na-kt-krivoy-rog",
+      "titleUk": "Перевезення на КТ Кривий Ріг",
+      "titleRu": "Перевозка на КТ Кривой Рог",
+      "category": "hospital",
+      "price": "від 1000 грн"
+    },
+    {
+      "id": 67,
+      "slugUk": "perevezennya-na-renthen-lezhachykh",
+      "slugRu": "perevozka-na-rentgen-lezhachikh",
+      "titleUk": "Перевезення на рентген лежачих",
+      "titleRu": "Перевозка на рентген лежачих",
+      "category": "hospital",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 68,
+      "slugUk": "perevezennya-v-khospis",
+      "slugRu": "perevozka-v-khospis",
+      "titleUk": "Перевезення в хоспіс",
+      "titleRu": "Перевозка в хоспис",
+      "category": "hospital",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 69,
+      "slugUk": "perevezennya-v-budynok-prystarilykh",
+      "slugRu": "perevozka-v-dom-prestare lykh",
+      "titleUk": "Перевезення в будинок пристарілих",
+      "titleRu": "Перевозка в дом престарелых",
+      "category": "hospital",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 70,
+      "slugUk": "transportuvannya-z-likarni-dodomu",
+      "slugRu": "transportirovka-iz-bolnitsy-domoy",
+      "titleUk": "Транспортування з лікарні додому",
+      "titleRu": "Транспортировка из больницы домой",
+      "category": "hospital",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 71,
+      "slugUk": "perevezennya-pokrovskyi-rayon",
+      "slugRu": "perevozka-pokrovskiy-rayon",
+      "titleUk": "Перевезення хворих Покровський район",
+      "titleRu": "Перевозка больных Покровский район",
+      "category": "district",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 72,
+      "slugUk": "perevezennya-saksahanskyi-rayon",
+      "slugRu": "perevozka-saksaganskiy-rayon",
+      "titleUk": "Перевезення хворих Саксаганський район",
+      "titleRu": "Перевозка больных Саксаганский район",
+      "category": "district",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 73,
+      "slugUk": "medtaksi-ternivskyi-rayon",
+      "slugRu": "medtaksi-ternovskoy-rayon",
+      "titleUk": "Медтаксі Тернівський район",
+      "titleRu": "Медтакси Терновской район",
+      "category": "district",
+      "price": "від 950 грн"
+    },
+    {
+      "id": 74,
+      "slugUk": "perevezennya-tsentralno-miskyi",
+      "slugRu": "perevozka-tsentralno-gorodskoy",
+      "titleUk": "Перевезення Центрально-Міський район",
+      "titleRu": "Перевозка Центрально-Городской район",
+      "category": "district",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 75,
+      "slugUk": "perevezennya-dovhyntsivskyi-rayon",
+      "slugRu": "perevozka-dolgintsevskiy-rayon",
+      "titleUk": "Перевезення Довгинцівський район",
+      "titleRu": "Перевозка Долгинцевский район",
+      "category": "district",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 76,
+      "slugUk": "perevezennya-metalurhiinyi-rayon",
+      "slugRu": "perevozka-metallurgicheskiy-rayon",
+      "titleUk": "Перевезення Металургійний район",
+      "titleRu": "Перевозка Металлургический район",
+      "category": "district",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 77,
+      "slugUk": "perevezennya-inhulets",
+      "slugRu": "perevozka-ingulets",
+      "titleUk": "Перевезення хворих Інгулець",
+      "titleRu": "Перевозка больных Ингулец",
+      "category": "district",
+      "price": "від 950 грн"
+    },
+    {
+      "id": 78,
+      "slugUk": "perevezennya-damanskyi",
+      "slugRu": "perevozka-damanskiy",
+      "titleUk": "Перевезення хворих Даманський",
+      "titleRu": "Перевозка больных Даманский",
+      "category": "district",
+      "price": "від 1000 грн"
+    },
+    {
+      "id": 79,
+      "slugUk": "perevezennya-pivnhzk",
+      "slugRu": "perevozka-sevgok",
+      "titleUk": "Перевезення хворих ПівнГЗК",
+      "titleRu": "Перевозка больных СевГОК",
+      "category": "district",
+      "price": "від 1000 грн"
+    },
+    {
+      "id": 80,
+      "slugUk": "perevezennya-zarichnyi",
+      "slugRu": "perevozka-zarechnyy",
+      "titleUk": "Перевезення хворих Зарічний",
+      "titleRu": "Перевозка больных Заречный",
+      "category": "district",
+      "price": "від 950 грн"
+    },
+    {
+      "id": 81,
+      "slugUk": "perevezennya-lezhachykh-tsina",
+      "slugRu": "perevozka-lezhachikh-tsena",
+      "titleUk": "Перевезення лежачих хворих ціна",
+      "titleRu": "Перевозка лежачих больных цена",
+      "category": "price",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 82,
+      "slugUk": "skilky-koshtuye-medtaksi",
+      "slugRu": "skolko-stoit-medtaksi",
+      "titleUk": "Скільки коштує медтаксі Кривий Ріг",
+      "titleRu": "Сколько стоит медтакси Кривой Рог",
+      "category": "price",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 83,
+      "slugUk": "vartist-transportuvannya-khvoroho",
+      "slugRu": "stoimost-transportirovki-bolnogo",
+      "titleUk": "Вартість транспортування хворого",
+      "titleRu": "Стоимость транспортировки больного",
+      "category": "price",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 84,
+      "slugUk": "medtaksi-telefon",
+      "slugRu": "medtaksi-telefon",
+      "titleUk": "Медтаксі телефон Кривий Ріг",
+      "titleRu": "Медтакси телефон Кривой Рог",
+      "category": "price",
+      "price": "+38 (097) 000-00-00"
+    },
+    {
+      "id": 85,
+      "slugUk": "zamovyty-perevezennya-nedoroho",
+      "slugRu": "zakazat-perevozku-nedorogo",
+      "titleUk": "Замовити перевезення недорого",
+      "titleRu": "Заказать перевозку недорого",
+      "category": "price",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 86,
+      "slugUk": "perevezennya-invalidiv-tsina-za-km",
+      "slugRu": "perevozka-invalidov-tsena-za-km",
+      "titleUk": "Перевезення інвалідів ціна за км",
+      "titleRu": "Перевозка инвалидов цена за км",
+      "category": "price",
+      "price": "від 15 грн/км"
+    },
+    {
+      "id": 87,
+      "slugUk": "desheve-taksi-dlya-lezhachykh",
+      "slugRu": "deshevoe-taksi-dlya-lezhachikh",
+      "titleUk": "Дешеве таксі для лежачих",
+      "titleRu": "Дешевое такси для лежачих",
+      "category": "price",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 88,
+      "slugUk": "rozrakhuvaty-vartist-perevezennya",
+      "slugRu": "rasschitat-stoimost-perevozki",
+      "titleUk": "Розрахувати вартість перевезення",
+      "titleRu": "Рассчитать стоимость перевозки",
+      "category": "price",
+      "price": "калькулятор"
+    },
+    {
+      "id": 89,
+      "slugUk": "nomer-telefonu-sluzhby-perevezennya",
+      "slugRu": "nomer-telefona-sluzhby-perevozki",
+      "titleUk": "Номер телефону служби перевезення",
+      "titleRu": "Номер телефона службы перевозки",
+      "category": "price",
+      "price": "+38 (097) 000-00-00"
+    },
+    {
+      "id": 90,
+      "slugUk": "oplata-perevezennya-kartkoyu",
+      "slugRu": "oplata-perevozki-kartoy",
+      "titleUk": "Оплата перевезення хворих картою",
+      "titleRu": "Оплата перевозки больных картой",
+      "category": "price",
+      "price": "так"
+    },
+    {
+      "id": 91,
+      "slugUk": "perevezennya-v-pansionat",
+      "slugRu": "perevozka-v-pansionat",
+      "titleUk": "Перевезення лежачого в пансіонат",
+      "titleRu": "Перевозка лежачего в пансионат",
+      "category": "specific",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 92,
+      "slugUk": "mashyna-shvydkoyi-bez-likariv",
+      "slugRu": "mashina-skoroy-bez-vrachey",
+      "titleUk": "Машина швидкої допомоги без лікарів",
+      "titleRu": "Машина скорой помощи без врачей",
+      "category": "specific",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 93,
+      "slugUk": "pryvatne-perevezennya-vidhuky",
+      "slugRu": "chastnaya-perevozka-otzyvy",
+      "titleUk": "Приватне перевезення хворих відгуки",
+      "titleRu": "Частная перевозка больных отзывы",
+      "category": "specific",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 94,
+      "slugUk": "transportuvannya-subota-nedilya",
+      "slugRu": "transportirovka-subbota-voskresenye",
+      "titleUk": "Транспортування лежачих субота неділя",
+      "titleRu": "Транспортировка лежачих суббота воскресенье",
+      "category": "specific",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 95,
+      "slugUk": "perevezty-khvoroho-na-dachu",
+      "slugRu": "perevezti-bolnogo-na-dachu",
+      "titleUk": "Перевезти хворого на дачу",
+      "titleRu": "Перевезти больного на дачу",
+      "category": "specific",
+      "price": "від 950 грн"
+    },
+    {
+      "id": 96,
+      "slugUk": "sluzhba-dostavky-khvorykh-dodomu",
+      "slugRu": "sluzhba-dostavki-bolnykh-domoy",
+      "titleUk": "Служба доставки хворих додому",
+      "titleRu": "Служба доставки больных домой",
+      "category": "specific",
+      "price": "від 850 грн"
+    },
+    {
+      "id": 97,
+      "slugUk": "perevezennya-reanimobilem",
+      "slugRu": "perevozka-reanimobilem",
+      "titleUk": "Перевезення важких хворих реанімобілем",
+      "titleRu": "Перевозка тяжелых больных реанимобилем",
+      "category": "specific",
+      "price": "за домовленістю"
+    },
+    {
+      "id": 98,
+      "slugUk": "transportuvannya-z-kysnem",
+      "slugRu": "transportirovka-s-kislorodom",
+      "titleUk": "Транспортування лежачих з киснем",
+      "titleRu": "Транспортировка лежачих с кислородом",
+      "category": "specific",
+      "price": "від 900 грн"
+    },
+    {
+      "id": 99,
+      "slugUk": "bezkoshtovne-perevezennya-konsultatsiya",
+      "slugRu": "besplatnaya-perevozka-konsultatsiya",
+      "titleUk": "Безкоштовне перевезення консультація",
+      "titleRu": "Бесплатная перевозка консультация",
+      "category": "specific",
+      "price": "консультація безкоштовна"
+    },
+    {
+      "id": 100,
+      "slugUk": "sotsialne-taksi-kontakty",
+      "slugRu": "sotsialnoe-taksi-kontakty",
+      "titleUk": "Соціальне таксі Кривий Ріг контакти",
+      "titleRu": "Социальное такси Кривой Рог контакты",
+      "category": "specific",
+      "price": "+38 (097) 000-00-00"
+    }
+  ]
+}

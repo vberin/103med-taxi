@@ -1,52 +1,89 @@
-import Link from 'next/link'
-import Image from 'next/image'
+'use client';
+
+import Link from 'next/link';
+import { BLOG_POSTS } from '@/lib/data/blog-posts';
+import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 export default function Blog() {
-  const posts = [
-    {
-      title: 'Як підготуватися до виписки з лікарні?',
-      image: 'https://placehold.co/600x400/e2e8f0/1e293b?text=Blog+Post+1',
-      link: '/blog/post-hospital-discharge'
-    },
-    {
-      title: 'Особливості перевезення на далекі відстані',
-      image: 'https://placehold.co/600x400/e2e8f0/1e293b?text=Blog+Post+2',
-      link: '/blog/post-long-distance'
-    },
-    {
-      title: 'Безпека та обладнання наших авто',
-      image: 'https://placehold.co/600x400/e2e8f0/1e293b?text=Blog+Post+3',
-      link: '/blog/post-safety'
-    }
-  ]
+  // Беремо тільки 6 останніх статей
+  const latestPosts = BLOG_POSTS.slice(0, 6);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-slate-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Корисна інформація</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {posts.map((post, index) => (
-            <article key={index} className="bg-white/80 backdrop-blur-md border border-slate-100 rounded-3xl overflow-hidden shadow-soft hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out">
-              <Link href={post.link}>
-                <Image
-                  src={post.image}
-                  alt={`Ілюстрація до статті: ${post.title} - професійні медичні послуги`}
-                  width={400}
-                  height={250}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold mb-4">{post.title}</h3>
-                  <div className="text-primary font-semibold">Читати статтю →</div>
+    <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-cyan-50 to-blue-50">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-block px-6 py-2 bg-green-100 rounded-full text-green-700 font-bold text-sm mb-4">
+            📝 Блог
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-800 mb-6">
+            Корисні поради та{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+              новини
+            </span>
+          </h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            Статті про медичне перевезення, поради родичам, огляди маршрутів та послуг
+          </p>
+        </div>
+
+        {/* Posts Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {latestPosts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group bg-white rounded-2xl overflow-hidden border-2 border-slate-200 hover:border-cyan-400 hover:shadow-2xl transition-all duration-300"
+            >
+              {/* Category badge */}
+              <div className="p-6">
+                <div className="inline-block px-4 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-bold mb-4">
+                  {post.category}
                 </div>
-              </Link>
-            </article>
+
+                {/* Title */}
+                <h3 className="text-xl font-black text-slate-800 mb-3 group-hover:text-cyan-600 transition line-clamp-2">
+                  {post.title}
+                </h3>
+
+                {/* Excerpt */}
+                <p className="text-slate-600 mb-4 line-clamp-3 text-sm leading-relaxed">
+                  {post.excerpt}
+                </p>
+
+                {/* Meta */}
+                <div className="flex items-center justify-between text-sm text-slate-500 border-t-2 border-slate-100 pt-4">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>{new Date(post.date).toLocaleDateString('uk-UA')}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4" />
+                    <span>{post.readTime} хв</span>
+                  </div>
+                </div>
+
+                {/* Read more */}
+                <div className="mt-4 flex items-center gap-2 text-cyan-600 font-bold group-hover:gap-4 transition-all">
+                  Читати далі
+                  <ArrowRight className="w-5 h-5" />
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
-        <div className="text-center mt-8">
-          <Link href="/blog" className="btn btn-outline">Всі статті блогу</Link>
+
+        {/* View all button */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-white border-2 border-cyan-500 text-cyan-600 font-black text-lg rounded-2xl shadow-lg hover:bg-cyan-50 transition-all"
+          >
+            Всі статті блогу
+            <ArrowRight className="w-6 h-6" />
+          </Link>
         </div>
       </div>
     </section>
-  )
+  );
 }

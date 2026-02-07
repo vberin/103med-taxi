@@ -1,0 +1,19 @@
+# https://103med.taxi/robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemaps
+Sitemap: https://103med.taxi/sitemap.xml
+Sitemap: https://103med.taxi/ru/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /

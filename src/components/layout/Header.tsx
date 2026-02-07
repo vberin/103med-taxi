@@ -2,127 +2,231 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { Phone, Menu, X, Globe, MapPin, Ambulance } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone } from 'lucide-react';
-
-const NAV_ITEMS = [
-  { name: 'Головна', href: '/' },
-  { name: 'Послуги та ціни', href: '/#services' }, // Добавили слэш для универсальности
-  { name: 'Блог', href: '/blog' },
-  { name: 'Контакти', href: '/#contacts' },       // Добавили слэш
-];
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const lang = pathname?.startsWith('/ru') ? 'ru' : 'uk';
 
-  // Эффект для тени при скролле
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Умная обработка клика по якорю
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    setIsOpen(false); // Закрываем мобильное меню
-
-    // Если это якорная ссылка
-    if (href.includes('#')) {
-      const targetId = href.split('#')[1];
-      
-      // Если мы УЖЕ на главной
-      if (pathname === '/') {
-        e.preventDefault();
-        const elem = document.getElementById(targetId);
-        if (elem) {
-          elem.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-      // Если мы НЕ на главной — Next.js Link сам перекинет нас на '/' + якорь
-    }
+  const t = {
+    uk: {
+      routes: 'Маршрути',
+      districts: 'Райони',
+      services: 'Послуги',
+      blog: 'Блог',
+      calculator: 'Калькулятор',
+      call: 'Викликати медтаксі',
+    },
+    ru: {
+      routes: 'Маршруты',
+      districts: 'Районы',
+      services: 'Услуги',
+      blog: 'Блог',
+      calculator: 'Калькулятор',
+      call: 'Вызвать медтакси',
+    },
   };
 
+  const basePath = lang === 'ru' ? '/ru' : '';
+
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-lg shadow-xl'
+          : 'bg-white/80 backdrop-blur-md'
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          
-          {/* Логотип */}
-          <Link href="/" className="text-2xl font-black text-slate-900 flex items-center gap-1">
-            103med<span className="text-red-500">.taxi</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <Link
+            href={basePath + '/'}
+            className="flex items-center gap-3 group"
+          >
+            <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl p-2.5 shadow-lg group-hover:scale-110 transition-transform">
+              <Ambulance className="w-7 h-7 text-white" />
+            </div>
+            <div className="flex items-baseline">
+              <span className="text-3xl font-black text-slate-800">
+                103med
+              </span>
+              <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
+                .taxi
+              </span>
+            </div>
           </Link>
 
-          {/* Десктопное меню */}
-          <nav className="hidden md:flex items-center gap-8">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="text-sm font-bold text-slate-600 hover:text-red-500 transition-colors uppercase tracking-wider"
-              >
-                {item.name}
-              </Link>
-            ))}
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-1">
+            <Link
+              href={basePath + '/routes'}
+              className="px-4 py-2 text-slate-700 font-bold hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition whitespace-nowrap"
+            >
+              {t[lang].routes}
+            </Link>
+            <Link
+              href={basePath + '/locations'}
+              className="px-4 py-2 text-slate-700 font-bold hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition whitespace-nowrap"
+            >
+              {t[lang].districts}
+            </Link>
+            <Link
+              href={basePath + '/services'}
+              className="px-4 py-2 text-slate-700 font-bold hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition whitespace-nowrap"
+            >
+              {t[lang].services}
+            </Link>
+            <Link
+              href={basePath + '/blog'}
+              className="px-4 py-2 text-slate-700 font-bold hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition whitespace-nowrap"
+            >
+              {t[lang].blog}
+            </Link>
+            <Link
+              href={basePath + '/calculator'}
+              className="px-4 py-2 text-slate-700 font-bold hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition whitespace-nowrap"
+            >
+              {t[lang].calculator}
+            </Link>
           </nav>
 
-          {/* Правая часть (Телефон + Кнопка) */}
-          <div className="hidden md:flex items-center gap-6">
-            <a href="tel:+380975539030" className="flex items-center gap-2 font-bold text-slate-800 hover:text-red-500 transition">
-              <Phone className="w-5 h-5 text-red-500" />
-              <span>+38 (097) 553-90-30</span>
-            </a>
-            <Link 
-              href="/#calculator"
-              onClick={(e) => handleNavClick(e, '/#calculator')}
-              className="bg-red-500 text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-red-600 transition shadow-lg shadow-red-500/30"
+          {/* Right side - Phone & Language */}
+          <div className="hidden lg:flex items-center gap-4">
+            {/* Language switcher */}
+            <div className="flex items-center gap-2 bg-slate-100 rounded-lg p-1">
+              <Link
+                href={pathname?.replace('/ru', '') || '/'}
+                className={`px-3 py-1.5 rounded-md font-bold text-sm transition whitespace-nowrap ${
+                  lang === 'uk'
+                    ? 'bg-white text-cyan-600 shadow-sm'
+                    : 'text-slate-600 hover:text-cyan-600'
+                }`}
+              >
+                УКР
+              </Link>
+              <Link
+                href={'/ru' + (pathname?.replace('/ru', '') || '')}
+                className={`px-3 py-1.5 rounded-md font-bold text-sm transition whitespace-nowrap ${
+                  lang === 'ru'
+                    ? 'bg-white text-cyan-600 shadow-sm'
+                    : 'text-slate-600 hover:text-cyan-600'
+                }`}
+              >
+                РУС
+              </Link>
+            </div>
+
+            {/* Phone */}
+            <a
+              href="tel:+380970000000"
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-black rounded-xl shadow-lg hover:scale-105 transition-transform whitespace-nowrap"
             >
-              ЗАМОВИТИ
-            </Link>
+              <Phone className="w-5 h-5" />
+              <span className="hidden xl:inline">+38 (097) 000-00-00</span>
+            </a>
           </div>
 
-          {/* Мобильная кнопка */}
-          <button 
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-slate-800"
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 text-slate-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition"
           >
-            {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
 
-      {/* Мобильное меню */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-100 shadow-xl p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
-          {NAV_ITEMS.map((item) => (
+      {/* Mobile menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-white border-t-2 border-slate-100 shadow-2xl">
+          <nav className="max-w-7xl mx-auto px-4 py-6 space-y-2">
             <Link
-              key={item.name}
-              href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
-              className="text-lg font-bold text-slate-800 py-2 border-b border-slate-50 last:border-0"
+              href={basePath + '/routes'}
+              className="block px-4 py-3 text-slate-700 font-bold hover:bg-cyan-50 hover:text-cyan-600 rounded-lg transition"
+              onClick={() => setIsMenuOpen(false)}
             >
-              {item.name}
+              {t[lang].routes}
             </Link>
-          ))}
-          <a href="tel:+380975539030" className="flex items-center gap-3 font-bold text-slate-800 py-2">
-            <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-              <Phone className="w-4 h-4 text-red-500" />
+            <Link
+              href={basePath + '/locations'}
+              className="block px-4 py-3 text-slate-700 font-bold hover:bg-cyan-50 hover:text-cyan-600 rounded-lg transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t[lang].districts}
+            </Link>
+            <Link
+              href={basePath + '/services'}
+              className="block px-4 py-3 text-slate-700 font-bold hover:bg-cyan-50 hover:text-cyan-600 rounded-lg transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t[lang].services}
+            </Link>
+            <Link
+              href={basePath + '/blog'}
+              className="block px-4 py-3 text-slate-700 font-bold hover:bg-cyan-50 hover:text-cyan-600 rounded-lg transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t[lang].blog}
+            </Link>
+            <Link
+              href={basePath + '/calculator'}
+              className="block px-4 py-3 text-slate-700 font-bold hover:bg-cyan-50 hover:text-cyan-600 rounded-lg transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t[lang].calculator}
+            </Link>
+
+            {/* Language switcher mobile */}
+            <div className="flex items-center gap-2 pt-4">
+              <Link
+                href={pathname?.replace('/ru', '') || '/'}
+                className={`flex-1 py-3 text-center rounded-lg font-bold transition ${
+                  lang === 'uk'
+                    ? 'bg-cyan-500 text-white'
+                    : 'bg-slate-100 text-slate-600'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Українська
+              </Link>
+              <Link
+                href={'/ru' + (pathname?.replace('/ru', '') || '')}
+                className={`flex-1 py-3 text-center rounded-lg font-bold transition ${
+                  lang === 'ru'
+                    ? 'bg-cyan-500 text-white'
+                    : 'bg-slate-100 text-slate-600'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Русский
+              </Link>
             </div>
-            +38 (097) 553-90-30
-          </a>
-          <Link 
-             href="/#calculator"
-             onClick={(e) => handleNavClick(e, '/#calculator')}
-             className="bg-red-500 text-white py-3 rounded-xl font-bold text-center shadow-lg shadow-red-500/20"
-          >
-            РОЗРАХУВАТИ ВАРТІСТЬ
-          </Link>
+
+            {/* Phone mobile */}
+            <a
+              href="tel:+380970000000"
+              className="flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-black text-lg rounded-xl shadow-lg mt-4"
+            >
+              <Phone className="w-6 h-6" />
+              <span className="whitespace-nowrap">+38&nbsp;(097)&nbsp;000-00-00</span>
+            </a>
+          </nav>
         </div>
       )}
     </header>
